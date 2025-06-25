@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: formulario-backend
+    env: docker
+    plan: free
+    repo: https://github.com/TU_USUARIO/TU_REPO
+    branch: main
+    dockerfilePath: Dockerfile
+    buildCommand: ""
+    startCommand: ""
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-xxx...render.com/formulario_db
+      - key: SPRING_DATASOURCE_USERNAME
+        value: TU_USUARIO_POSTGRES
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: TU_CONTRASEÑA_POSTGRES
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_SHOW_SQL
+        value: "true"
