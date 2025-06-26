@@ -6,12 +6,35 @@ public class PersonaResponseDTO {
     private Long id;
     private String nombre;
     private String apellido;
+    private String tipoDocumento;
     private String identificacion;
     private String email;
     private String fechaNacimiento;
 
-    public PersonaResponseDTO(Persona persona) {
+    public PersonaResponseDTO() {
     }
+
+    public PersonaResponseDTO(Long id, String nombre, String apellido, String tipoDocumento, String identificacion, String email, String fechaNacimiento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoDocumento = tipoDocumento;
+        this.identificacion = identificacion;
+        this.email = email;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public PersonaResponseDTO(Persona persona) {
+        this.id = persona.getId();
+        this.nombre = persona.getNombre();
+        this.apellido = persona.getApellido();
+        this.tipoDocumento = persona.getTipoDocumento();
+        this.identificacion = persona.getIdentificacion();
+        this.email = persona.getEmail();
+        this.fechaNacimiento = persona.getFechaNacimiento().toString();
+    }
+
+    // Getters y setters
 
     public Long getId() {
         return id;
@@ -37,6 +60,14 @@ public class PersonaResponseDTO {
         this.apellido = apellido;
     }
 
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
     public String getIdentificacion() {
         return identificacion;
     }
@@ -58,18 +89,6 @@ public class PersonaResponseDTO {
     }
 
     public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public PersonaResponseDTO() {
-    }
-
-    public PersonaResponseDTO(Long id, String nombre, String apellido, String identificacion, String email, String fechaNacimiento) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.identificacion = identificacion;
-        this.email = email;
         this.fechaNacimiento = fechaNacimiento;
     }
 }

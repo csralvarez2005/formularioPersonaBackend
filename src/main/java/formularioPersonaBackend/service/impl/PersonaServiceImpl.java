@@ -61,6 +61,7 @@ public class PersonaServiceImpl implements PersonaService {
         persona.setEmail(dto.getEmail());
         persona.setFechaNacimiento(LocalDate.parse(dto.getFechaNacimiento()));
         persona.setIdentificacion(dto.getIdentificacion());
+        persona.setTipoDocumento(dto.getTipoDocumento()); // 👈 nuevo campo
 
         return mapToDTO(personaRepository.save(persona));
     }
@@ -88,6 +89,7 @@ public class PersonaServiceImpl implements PersonaService {
         dto.setEmail(persona.getEmail());
         dto.setIdentificacion(persona.getIdentificacion());
         dto.setFechaNacimiento(persona.getFechaNacimiento().toString());
+        dto.setTipoDocumento(persona.getTipoDocumento()); // 👈 nuevo campo
         return dto;
     }
 
@@ -98,6 +100,7 @@ public class PersonaServiceImpl implements PersonaService {
         persona.setEmail(dto.getEmail());
         persona.setIdentificacion(dto.getIdentificacion());
         persona.setFechaNacimiento(LocalDate.parse(dto.getFechaNacimiento()));
+        persona.setTipoDocumento(dto.getTipoDocumento()); // 👈 nuevo campo
         return persona;
     }
 }

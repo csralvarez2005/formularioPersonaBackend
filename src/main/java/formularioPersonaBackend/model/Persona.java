@@ -18,6 +18,9 @@ public class Persona {
     @Column(nullable = false)
     private String apellido;
 
+    @Column(nullable = false)
+    private String tipoDocumento;
+
     @Column(unique = true, nullable = false)
     private String identificacion;
 
@@ -30,13 +33,14 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, String identificacion, String email, LocalDate fechaNacimiento) {
+    public Persona(Long id, String nombre, String apellido, String identificacion, String email, LocalDate fechaNacimiento,String tipoDocumento) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.identificacion = identificacion;
         this.email = email;
         this.fechaNacimiento = fechaNacimiento;
+        this.tipoDocumento = tipoDocumento;
     }
 
     public Long getId() {
@@ -85,5 +89,13 @@ public class Persona {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 }

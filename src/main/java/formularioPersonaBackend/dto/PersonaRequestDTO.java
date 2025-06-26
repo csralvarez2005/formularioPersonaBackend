@@ -11,11 +11,16 @@ public class PersonaRequestDTO {
     private String apellido;
 
     @NotBlank
+    private String tipoDocumento;
+
+    @NotBlank
     private String identificacion;
 
     private String email;
 
     private String fechaNacimiento;
+
+    // Getters y Setters
 
     public @NotBlank String getNombre() {
         return nombre;
@@ -31,6 +36,14 @@ public class PersonaRequestDTO {
 
     public void setApellido(@NotBlank String apellido) {
         this.apellido = apellido;
+    }
+
+    public @NotBlank String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(@NotBlank String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public @NotBlank String getIdentificacion() {
