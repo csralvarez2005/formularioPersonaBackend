@@ -30,6 +30,10 @@ public class PersonaController {
                 .map(personaService::crear)
                 .collect(Collectors.toList());
     }
+    @PostMapping
+    public PersonaResponseDTO crear(@RequestBody @Valid PersonaRequestDTO dto) {
+        return personaService.crear(dto);
+    }
 
     @GetMapping("/{id}")
     public PersonaResponseDTO obtener(@PathVariable Long id) {
